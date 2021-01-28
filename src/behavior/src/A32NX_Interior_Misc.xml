@@ -205,6 +205,29 @@
                             if onGround and (A:AUTO BRAKE SWITCH CB, number) == 4 {
                                 autobrakesLevel = 3;
                             }
+                            else{
+                                if onGround and (A:AUTO BRAKE SWITCH CB, number) == 3 {
+                                    autobrakesLevel = 2;
+                                }
+                                else{
+                                    if onGround and (A:Auto BRAKE SWITCH CB, number) == 2 {
+                                        autobrakesLevel = 1;
+                                    }
+                                    else{
+                                        if onGround and (A:Auto BRAKE SWITCH CB, number) == 1 {
+                                            autobrakesLevel = 0;
+                                        }
+                                    }
+                                }
+                            }
+                            if !onGround and (A:AUTO BRAKE SWITCH CB, number) == 3 {
+                                autobrakesLevel = 2;
+                            }
+                            else{
+                                if !onGround and (A:AUTO BRAKE SWITCH CB, number) == 2 {
+                                    autobrakesLevel = 1;
+                                }
+                            }
 
                             if autobrakesLevel != 0 {
                                 if disarmAutobrakesOnLgRetract and !(A:GEAR HANDLE POSITION, bool) {
